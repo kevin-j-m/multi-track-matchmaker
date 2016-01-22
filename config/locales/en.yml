@@ -16,4 +16,16 @@ en:
         "%B %d"
 
   titles:
-    application: Multi-track-matchmaker
+    application: Multi-track Matchmaker
+  conference:
+    labels:
+      name: "Title"
+      starts_on: "Starts on"
+      ends_on: "Ends on"
+    new:
+      cta: "Create new conference"
+    create:
+      success: "Conference was successfully created."
+    update:
+      success: "Conference was successfully updated."
+      cta: "Update conference"
