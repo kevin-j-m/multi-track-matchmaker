@@ -5,4 +5,5 @@ describe Presentation do
   it { should validate_presence_of :description }
 
   it { should belong_to :conference }
+  it { should belong_to :presenter }
 end
