@@ -4,6 +4,7 @@ ruby "2.3.0"
 
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
+gem "clearance"
 gem "coffee-rails", "~> 4.1.0"
 gem "flutie"
 gem "jquery-rails"
