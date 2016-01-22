@@ -1,0 +1,13 @@
+<%= simple_form_for(@conference) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: I18n.t("conference.labels.name")%>
+    <%= f.input :starts_on, as: :date, label: I18n.t("conference.labels.starts_on")%>
+    <%= f.input :ends_on, as: :date, label: I18n.t("conference.labels.ends_on")%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, I18n.t("conference.#{f.object.new_record? ? 'new' : 'update'}.cta") %>
+  </div>
+<% end %>

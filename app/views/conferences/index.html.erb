@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Conferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"><%= t("conference.labels.name") %></th>
+      <th colspan="3"><%= t("conference.labels.starts_on") %></th>
+      <th colspan="3"><%= t("conference.labels.ends_on") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |conference| %>
+      <tr class="conference">
+        <td colspan="3"><%= link_to conference.name, conference %></td>
+        <td colspan="3"><%= conference.starts_on %></td>
+        <td colspan="3"><%= conference.ends_on %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
