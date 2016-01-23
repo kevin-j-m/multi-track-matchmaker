@@ -1,0 +1,6 @@
+<% presentations.each do |presentation| %>
+  <div class="presentation">
+    <%= link_to presentation.title, [presentation.conference, presentation] %>
+    <%= presentation.presenter.full_name %>
+  </div>
+<% end %>

@@ -1,2 +1,5 @@
 <h1><%= @conference.name %></h1>
+<% @conference.presentations_by_time_slot.each do |time_slot| %>
+  <%= render "time_slot", time_slot: time_slot %>
+<% end %>
 <%= link_to 'Back', conferences_path %>

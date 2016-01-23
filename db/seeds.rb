@@ -75,8 +75,8 @@ In this session, we will look at some tips, tricks and tools to help you debug y
         conference_id: @rails_conf_2015.id,
         title: "Slightly Less Painful Time Zones",
         description: "For developers, there are two things that are certain for time zones: you can’t avoid having to deal with them, and you will screw them up at some point. There are, however, some ways to mitigate the pain. This talk will discuss tactics for avoiding time zone mayhem, using a feature to send out weekly email reports in a customer’s local time zone as a case study. It will cover idiosyncrasies of how time zones are handled in Ruby and Rails, how to write tests to avoid false positives, and advice on how to release time zone-related code changes more safely.",
-        starts_at: Time.new(2015, 4, 21, 9, 30, 0),
-        ends_at: Time.new(2015, 4, 21, 10, 40, 0)
+        starts_at: Time.new(2015, 4, 21, 13, 50, 0),
+        ends_at: Time.new(2015, 4, 21, 14, 30, 0)
       }]
     }
   ]
