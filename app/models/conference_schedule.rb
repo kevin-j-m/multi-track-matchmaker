@@ -1,4 +1,6 @@
 class ConferenceSchedule
+  attr_reader :conference
+
   def initialize(conference)
     @conference = conference
   end
@@ -8,7 +10,13 @@ class ConferenceSchedule
   end
 
   def presentations_by_time_slot
-    grouped_presentations.sort.to_h
+    time_slots = []
+
+    grouped_presentations.each do |time, presentations|
+      time_slots << TimeSlot.new(time, presentations)
+    end
+
+    time_slots.sort
   end
 
   private
@@ -18,8 +26,21 @@ class ConferenceSchedule
   end
 
   def grouped_presentations
-    presentations.group_by(&:starts_at)
+    presentations.includes(:presenter).group_by(&:starts_at)
+  end
+end
+
+class TimeSlot
+  include Comparable
+
+  attr_reader :starts_at, :presentations
+
+  def initialize(starts_at, presentations)
+    @starts_at = starts_at
+    @presentations = presentations
   end
 
-  attr_reader :conference
+  def <=>(another_slot)
+    starts_at <=> another_slot.starts_at
+  end
 end

@@ -19,8 +19,8 @@ describe ConferenceSchedule do
 
       before do
         2.times do
-          create(:presentation, conference: conference, starts_at: first_time_slot)
           create(:presentation, conference: conference, starts_at: second_time_slot)
+          create(:presentation, conference: conference, starts_at: first_time_slot)
         end
       end
 
@@ -29,11 +29,11 @@ describe ConferenceSchedule do
       end
 
       it "orders presentations" do
-        expect(ordered_presentations.keys).to eq [first_time_slot, second_time_slot]
+        expect(ordered_presentations.first.starts_at).to eq first_time_slot
       end
 
       it "combines all presentations in same time slot together" do
-        expect(ordered_presentations[first_time_slot].size).to eq 2
+        expect(ordered_presentations.first.presentations.size).to eq 2
       end
     end
 
