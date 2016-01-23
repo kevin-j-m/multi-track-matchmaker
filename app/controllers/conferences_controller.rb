@@ -8,6 +8,7 @@ class ConferencesController < ApplicationController
 
   # GET /conferences/1
   def show
+    @conference = ConferenceSchedule.new(@conference)
   end
 
   # GET /conferences/new

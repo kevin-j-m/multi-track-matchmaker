@@ -44,7 +44,8 @@ RSpec.describe ConferencesController, type: :controller do
     it "assigns the requested conference as @conference" do
       conference = Conference.create! valid_attributes
       get :show, {:id => conference.to_param}, valid_session
-      expect(assigns(:conference)).to eq(conference)
+      schedule = assigns(:conference)
+      expect(schedule.name).to eq(conference.name)
     end
   end
 
