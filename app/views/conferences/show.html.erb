@@ -1,13 +1,5 @@
 <h1><%= @conference.name %></h1>
 <% @conference.presentations_by_time_slot.each do |time_slot| %>
-  <div>
-    <%= time_slot.starts_at %>
-    <% time_slot.presentations.each do |presentation| %>
-      <div class="presentation">
-        <%= link_to presentation.title, [@conference.conference, presentation] %>
-        <%= presentation.presenter.full_name %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "time_slot", time_slot: time_slot %>
 <% end %>
 <%= link_to 'Back', conferences_path %>

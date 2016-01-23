@@ -1,6 +1,4 @@
 class ConferenceSchedule
-  attr_reader :conference
-
   def initialize(conference)
     @conference = conference
   end
@@ -20,6 +18,8 @@ class ConferenceSchedule
   end
 
   private
+
+  attr_reader :conference
 
   def presentations
     conference.presentations
